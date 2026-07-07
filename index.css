@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-paper text-ink;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  /* Visible keyboard focus everywhere, even where we style away default outlines */
+  :focus-visible {
+    outline: 2px solid #B8924A;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-ink text-paper px-6 py-3
+           text-sm font-medium tracking-wide transition-transform duration-150
+           hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center rounded-full bg-gold text-paper px-6 py-3
+           text-sm font-medium tracking-wide shadow-soft transition-transform duration-150
+           hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-ink/15 bg-transparent
+           px-6 py-3 text-sm font-medium tracking-wide transition-colors hover:border-ink/40;
+  }
+  .card {
+    @apply bg-paper rounded-xl2 shadow-card border border-ink/5;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm
+           placeholder:text-ink/40 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
