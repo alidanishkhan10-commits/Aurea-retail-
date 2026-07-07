@@ -5,7 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 // IMPORTANT: base must match your GitHub Pages repo name, e.g. "/garment-platform/"
 // If you're deploying to a custom domain or user/org page (username.github.io), set base to "/".
 export default defineConfig({
-  base: "/garment-platform/",
+  base: "/Aurea-retail-/",
   plugins: [
     react(),
     VitePWA({
